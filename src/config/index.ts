@@ -2,11 +2,11 @@ import isMobile from '@/utils/is-mobile';
 
 import type { Notifications } from './types';
 
-const title = 'React PWA';
+const title = import.meta.env.VITE_TITLE;
 
-const email = 'auther-email@gmail.com';
+const email = import.meta.env.VITE_EMAIL;
 
-const repository = 'https://github.com/suren-atoyan/react-pwa';
+const repository = import.meta.env.VITE_REPOSITORY;
 
 const messages = {
   app: {
@@ -27,7 +27,7 @@ const messages = {
   404: 'Hey bro? What are you looking for?',
 };
 
-const dateFormat = 'MMMM DD, YYYY';
+const dateFormat = 'DD MM YYYY';
 
 const notifications: Notifications = {
   options: {
