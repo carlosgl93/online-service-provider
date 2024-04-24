@@ -10,9 +10,9 @@ const CenteredFlexBox = styled(FlexBox)({
   alignItems: 'center',
 });
 
-const FullSizeCenteredFlexBox = styled(CenteredFlexBox)({
+const FullSizeCenteredFlexBox = styled(CenteredFlexBox)(() => ({
   width: '100%',
   height: '100%',
-});
+}));
 
 export { FlexBox, CenteredFlexBox, FullSizeCenteredFlexBox };

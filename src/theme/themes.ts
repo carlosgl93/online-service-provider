@@ -5,12 +5,46 @@ import { Themes } from './types';
 
 const sharedTheme = {
   palette: {
+    type: 'light',
+    primary: {
+      main: '#CCAD00', // dorado
+      contrastText: '#743F2F', // cafe
+    },
+    secondary: {
+      main: '#743F2F',
+    },
     background: {
-      default: '#fafafa',
-      paper: '#fff',
+      default: '#FEFAE0',
+      paper: '#ffffff',
+    },
+    success: {
+      main: '#00ee9d',
+    },
+    info: {
+      main: '#743F2F',
+    },
+    warning: {
+      main: '#ea8600',
+    },
+    error: {
+      main: '#ff8ca3',
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        '*': {
+          color: '#743F2F',
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: '#FEFAE0',
+        },
+      },
+    },
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
@@ -22,8 +56,6 @@ const sharedTheme = {
           marginRight: 10,
           marginLeft: 10,
         },
-        // TODO: open issue for missing "horizontal" CSS rule
-        // in Divider API - https://mui.com/material-ui/api/divider/#css
         middle: {
           marginTop: 10,
           marginBottom: 10,
@@ -32,19 +64,19 @@ const sharedTheme = {
       },
     },
   },
-} as ThemeOptions; // the reason for this casting is deepmerge return type
-// TODO (Suren): replace mui-utils-deepmerge with lodash or ramda deepmerge
+} as ThemeOptions;
 
 const themes: Record<Themes, ThemeOptions> = {
   light: deepmerge(sharedTheme, {
     palette: {
       mode: 'light',
       background: {
-        default: '#fafafa',
-        paper: '#fff',
+        default: '#ffffe1',
+        paper: '#ffffff',
       },
       primary: {
-        main: '#3f51b5',
+        main: '#CCAD00', // dorado
+        contrastText: '#743F2F', // cafe
       },
     },
   }),

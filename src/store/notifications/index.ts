@@ -17,10 +17,8 @@ function useNotifications(): [Notification[], Actions] {
 
   const push = useCallback(
     (notification: Partial<Notification>) => {
-      // TODO (Suren): use uuid
       const id = Math.random().toString();
       setNotifications((notifications): Notification[] => [
-        // TODO (Suren): use immer
         ...notifications,
         {
           ...notification,
